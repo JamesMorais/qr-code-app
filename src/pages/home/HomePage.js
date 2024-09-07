@@ -1,5 +1,4 @@
 import { View } from 'react-native'
-import { styles } from '../../pages/home/HomePageStyles'
 import CustomButton from '../../components/customButton/CustomButton'
 export default function HomePage() {
     return (
