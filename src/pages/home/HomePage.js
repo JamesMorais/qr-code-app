@@ -1,11 +1,12 @@
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import CustomButton from '../../components/customButton/CustomButton'
-export default function HomePage() {
+import { styles } from '../../styles/commonStyles'
+export default function HomePage({ navigation }) {
     return (
         <View>
             <View>
                 <View>
-                    <Image />
+            
                 </View>
                 <View>
                     <Text style={{ color: '#171717', fontWeight: '700', fontSize: 25 }}>Boas Vindas à <Text style={{ color: '#3479FA', }}>nossa plataforma!</Text></Text>
@@ -13,10 +14,10 @@ export default function HomePage() {
                     <Text style={{ color: '#333333', fontSize: 16 }}>Escolha entre gerar seu próprio QR Code ou ler um já existente!</Text>
                 </View>
                 <View>
-                    <CustomButton>
+                    <CustomButton onPress={() => navigation.navigate('QrCodeGenerator')}>
                     <Text style={[styles.buttonText, { color: '#F9F5FF' }]}>Gerar QR Code</Text>
                     </CustomButton>
-                    <CustomButton>
+                    <CustomButton onPress={() => navigation.navigate('QrCodeScan')}>
                     <Text style={[styles.buttonText, { color: '#000' }]}>Ler QR Code</Text>
                     </CustomButton>
                 </View>
