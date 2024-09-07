@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
-import { View } from 'react-native'
+
 import { styles } from './InputStyles';
 
 export default function Input(props) {
