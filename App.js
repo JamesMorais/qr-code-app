@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomePage from './src/pages/home/HomePage';
 import QrCodeGeneratorPage from './src/pages/qrCodeGenerator/QrCodeGeneratorPage'
 import QrCodeScanPage from './src/pages/qrCodeScan/QrCodeScanPage';
+import SavedLinksPage from './src/pages/SavedLinks/SavedLinksPage'
 
 const stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ export default function App() {
         <stack.Screen name='Home' component={HomePage}/>
         <stack.Screen name='QrCodeGenerator' component={QrCodeGeneratorPage} />
         <stack.Screen name='QrCodeScan' component={QrCodeScanPage} />
+        <stack.Screen name='SavedLinks' component={SavedLinksPage} />
       </stack.Navigator>
     </NavigationContainer>
   );

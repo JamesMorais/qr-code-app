@@ -5,12 +5,14 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F9F5FF',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
   box: {
-    width: '80%',
-    alignItems: 'center',
-  },
+    marginTop:
+    40,
+    width: '70%',
+    alignItems: 'baseline'
+},
   boxImage: {
     marginBottom: 20,
   },
@@ -23,31 +25,33 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
   },
   boxButtons: {
-    flexDirection: 'row',
+    alignItems: 'center',
+    
     justifyContent: 'space-between',
     width: '100%',
   },
-  button: {
-    padding: 10,
-    backgroundColor: '#fff',
-    borderWidth: 2,
-    borderRadius: 10,
-    borderColor: '#171717'
+  button:{
+    width: 400,
   },
   buttonText: {
     fontSize: 16,
+    color: 'white',
   },
   maintext: {
     fontSize: 20,
-    margin: 20,
+    marginTop: 15,
+    marginBottom: 10,
     fontWeight:'700'
   },
   cameraContainer: {
-    flex: 1,
+    //flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
     backgroundColor: '#F9F5FF',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    //gap:'15%'
+    marginTop: '10%',
+    //justifyContent: 'flex-start',
+    gap:'15%'
   },
   barcodebox: {
     alignItems: 'center',
@@ -79,9 +83,17 @@ export const styles = StyleSheet.create({
     marginBottom: 20,
   }, 
   title: {
-    fontSize: 21,
-    fontWeight: '500',
-    marginBottom: 10,
+    textAlign: 'left',
+    color: '#171717', fontWeight: '700', fontSize: 25
+  },
+  subText:{ fontWeight: '500', fontSize: 20 },
+  buttonContainer:{
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  highlightedText:{
+    color: '#007BFF',
   },
   wrapper: {
     maxWidth: 300,

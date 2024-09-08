@@ -5,7 +5,7 @@ import { Text, View, Button, } from 'react-native';
 import CustomButton from '../../components/customButton/CustomButton';
 import { styles } from '../../styles/commonStyles';
 
-export default function QrCodeScanPage(){
+export default function QrCodeScanPage({ navigation }){
     //const [hasPermission, setHasPermission] = useState(null);
     const [scanned, setScanned] = useState(false);
     const [text, setText] = useState('Ainda não escaneado')
@@ -65,6 +65,9 @@ export default function QrCodeScanPage(){
                         <Text>Escanear novamente</Text>
                     </CustomButton>
                 )}
+                {scanned &&(<CustomButton onPress={() => navigation.navigate('SavedLinks')}>
+                    <Text>Guardar Links</Text>
+                </CustomButton>)}
             </View>
         </View>
     );

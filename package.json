@@ -9,11 +9,14 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/metro-runtime": "~3.2.3",
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/stack": "^6.4.1",
+    "axios": "^1.7.7",
     "expo": "~51.0.28",
     "expo-camera": "~15.0.15",
     "expo-clipboard": "~6.0.3",
+    "expo-sqlite": "~14.0.6",
     "expo-status-bar": "~1.12.1",
     "nasmaosdeganesha": "file:",
     "react": "18.2.0",
@@ -23,8 +26,7 @@
     "react-native-safe-area-context": "4.10.5",
     "react-native-screens": "3.31.1",
     "react-native-svg": "^15.2.0",
-    "react-native-web": "~0.19.10",
-    "@expo/metro-runtime": "~3.2.3"
+    "react-native-web": "~0.19.10"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
