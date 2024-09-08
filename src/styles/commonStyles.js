@@ -37,6 +37,9 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: 'white',
   },
+  lastButton: {
+    backgroundColor: '#353238'
+  },
   maintext: {
     fontSize: 20,
     marginTop: 15,

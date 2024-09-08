@@ -56,7 +56,7 @@ export default function QrCodeGeneratorPage({ navigation }) {
 
                 <Input placeholder='Digite o texto ou URL' value={qrValue} onChangeText={handleInputChange} />
 
-                <CustomButton onPress={generateQRCode}>
+                <CustomButton style={styles.button} onPress={generateQRCode}>
                     <Text>
                         Gerar QrCode
                     </Text>

@@ -86,7 +86,7 @@ export default function SavedLinksPage() {
     return (
         <View style={styles.container}>
             {/* Entrada de link */}
-            <Text>Link:</Text>
+            <Text style={{fontSize: 20}}>Link:</Text>
             <TextInput
                 value={textInputName}
                 style={styles.input}
@@ -95,78 +95,87 @@ export default function SavedLinksPage() {
             />
     
             {/* Botão de adicionar */}
-            <TouchableOpacity onPress={addNew} style={[styles.buttons, { backgroundColor: '#28a745' }]}>
+            <TouchableOpacity onPress={addNew} style={[styles.buttons, { backgroundColor: '#007BFF' }]}>
                 <Text style={styles.buttonText}>Salvar</Text>
             </TouchableOpacity>
     
             {/* Renderização da lista de links com FlatList */}
-            <FlatList
-                data={listaDeLinks}
-                keyExtractor={(item, index) => index.toString()}
-                renderItem={({ item }) => (
-                    <View style={styles.containerList}>
-                        <View style={{ gap: 5 }}>
-                            <Text style={{ fontWeight: 'bold' }}>Link Salvo:</Text>
-                            <Text>{item.prodcutName}</Text>
+            <View style={styles.containerList}>
+                <FlatList
+                    data={listaDeLinks}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => (
+                        <View style={styles.containerList}>
+                            <View style={{ gap: 5 }}>
+                                <Text style={{ fontWeight: 'bold' }}>Link Salvo:</Text>
+                                <Text>{item.prodcutName}</Text>
+                            </View>
+                            <View>
+                                {/* Botão para copiar o texto */}
+                                <TouchableOpacity onPress={() => copyToClipboard(item.prodcutName)} style={[styles.buttons, { backgroundColor: '#353238' }]}>
+                                    <Text style={styles.buttonText}>Copy</Text>
+                                </TouchableOpacity>
+                                {/* Botão de remover */}
+                                <TouchableOpacity onPress={() => removeList(item.prodcutName)} style={[styles.buttons, { backgroundColor:  '#EF798A' }]}>
+                                    <Text style={styles.buttonText}>Remove</Text>
+                                </TouchableOpacity>
+                            </View>
                         </View>
-                        <View>
-                            {/* Botão para copiar o texto */}
-                            <TouchableOpacity onPress={() => copyToClipboard(item.prodcutName)} style={[styles.buttons, { backgroundColor: '#17a2b8' }]}>
-                                <Text style={styles.buttonText}>Copy</Text>
-                            </TouchableOpacity>
-                            {/* Botão de remover */}
-                            <TouchableOpacity onPress={() => removeList(item.prodcutName)} style={[styles.buttons, { backgroundColor: '#dc3545' }]}>
-                                <Text style={styles.buttonText}>Remove</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                )}
-                contentContainerStyle={{ flexGrow: 1, alignItems: 'center' }} // Faz a lista ocupar todo o espaço disponível
-            />
+                    )}
+                    contentContainerStyle={{ flexGrow: 1, alignItems: 'center' }} // Faz a lista ocupar todo o espaço disponível
+                />
+            </View>
     
             <StatusBar style="auto" />
         </View>
     );
 }
 
-// Estilos
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: '50%',
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#e0e0e0'
+        paddingTop: '10%', 
+        backgroundColor: '#F9F5FF', 
+        alignItems: 'center', 
+        justifyContent: 'flex-start', 
+        gap: 10, 
     },
     input: {
-        textAlign: 'center',
-        height: 40,
-        width: '80%',
-        borderWidth: 1,
-        padding: 10,
-        margin: 10,
+        textAlign: 'center', 
+        height: 40, 
+        width: '80%', 
+        borderWidth: 1, 
+        borderColor: '#999', 
+        padding: 10, 
+        marginBottom: 20, 
+        borderRadius: 5, 
     },
     containerList: {
-        borderWidth: 1,
-        width: '80%',
+        borderWidth: 1, 
+        borderColor: '#ddd', 
+        width: '90%', 
         flexDirection: 'row', 
         justifyContent: 'space-between', 
         alignItems: 'center', 
-        padding: 10,
-        borderBottomWidth: 1,
-        borderBottomColor: '#ddd',
-        justifyContent: 'space-between',
+        padding: 10, 
+        borderBottomWidth: 1, 
+        borderBottomColor: '#ddd', 
+        marginBottom: 10, 
+        borderRadius: 10, 
     },
     buttons: {
-        borderWidth: 1,
-        width: '80%',
-        padding: 10,
-        margin: 10,
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: '#007BFF', 
+        padding: 10, 
+        borderRadius: 5,
+        alignItems: 'center', 
+        marginTop: 10, 
+        width: 100, 
     },
     buttonText: {
         color: 'white',
+        fontSize: 16, 
+        textAlign: 'center', 
     },
 });
+
